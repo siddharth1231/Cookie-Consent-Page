@@ -38,8 +38,7 @@ export default function CookieConsent() {
     });
 
     useEffect(() => {
-        // Remove this line after testing if you want the cookie to persist
-        Cookie.remove('cookieConsent'); 
+        //Cookie.remove('cookieConsent'); 
 
         const consent = Cookie.get('cookieConsent');
         if (!consent) {
@@ -103,7 +102,6 @@ export default function CookieConsent() {
         setShowManageButton(true);
     };
 
-    // Show the cookie consent banner if showBanner is true
     return (
         <>
             {showBanner && (
@@ -172,7 +170,6 @@ export default function CookieConsent() {
                 </div>
             )}
 
-            {/* Manage Cookies button shows when banner hidden but user consent exists */}
             {showManageButton && !showBanner && (
                 <button
                     onClick={handleManageCookiesClick}
